@@ -1,0 +1,29 @@
+﻿@model CreateEventModel
+@{
+    ViewData["Title"] = "Event Details";
+}
+
+
+<div class="container">
+    <h3 class="display-4 text-center">Event Details</h3>
+    <hr />
+
+    <div class="card shadow-sm col-md-9  justify-content-center">
+        <img class="bd-placeholder-img card-img-top" height="525" src="~/images/book4.webp" />
+
+
+        <div class="card-body text-center">
+            <h4 class="card-title"><b>Title:</b>@Model.Title</h4>
+            <h5 class="card-subtitle mb-2 text-muted"><b>Discription :</b>@Model.Discription </h5>
+            <h5 class="card-subtitle mb-2 text-muted"><b>Date :</b>@Model.Date </h5>
+            <h5 class="card-subtitle mb-2 text-muted"><b>Duration :</b>@Model.Duration</h5>
+            <h5 class="card-subtitle mb-2 text-muted"><b>Location :</b>@Model.Location</h5>
+            <h5 class="card-subtitle mb-2 text-muted"><b>StartTime :</b>@Model.StartTime</h5>
+            <h5 class="card-subtitle mb-2 text-muted"><b>OtherDetails :</b>@Model.OtherDetails</h5>
+            <h5 class="card-subtitle mb-2 text-muted"><b>Created By :</b>@Model.Creator</h5>
+
+        </div>
+
+
+    </div>
+</div>

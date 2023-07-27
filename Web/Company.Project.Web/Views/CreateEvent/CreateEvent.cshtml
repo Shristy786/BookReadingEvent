@@ -1,0 +1,88 @@
+﻿@model CreateEventModel
+@{
+    ViewData["Title"] = "Create New Event";
+ }
+
+<div class="container">
+    <h3 class="display-4">Create New Event</h3> 
+    <hr />
+    @if(ViewBag.IsSuccess==true)
+    {
+    <div class="alert alert-Success alert-dismissible fade show" role="alert">
+        <strong>Congratulations!</strong>you should add a new event successfully. <br />
+        click <a asp-controller="CreateEvent" asp-action="GetEvent" asp-route-id=" @ViewBag.NewEventId"> here </a> to view the details
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <span area-hidden="true">&times;</span>
+        </button>
+    </div>
+    }
+
+<form method="post" asp-action="CreateEvent" asp-controller="CreateEvent">
+
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Date"></label>
+        <input asp-for="Date" class="form-control" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Location"></label>
+        <input asp-for="Location" class="form-control" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StartTime"></label>
+        <input asp-for="StartTime" class="form-control" />
+        <span asp-validation-for="StartTime" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="EventType"></label>
+        <select asp-for="EventType" class="form-control">
+            <option value="">Choose the Type of Event</option>
+            <option>Public</option>
+            <option>Private</option>
+        </select>
+        <span asp-validation-for="EventType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Duration"></label>
+        <input asp-for="Duration" class="form-control" />
+        <span asp-validation-for="Duration" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Discription"></label>
+        <textarea asp-for="Discription" class="form-control"></textarea>
+        <span asp-validation-for="Discription" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OtherDetails"></label>
+        <input asp-for="OtherDetails" class="form-control" />
+        <span asp-validation-for="OtherDetails" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="InviteByMail"></label>
+        <input asp-for="InviteByMail" class="form-control" />
+        <span asp-validation-for="InviteByMail" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Creator"></label>
+        <input asp-for="Creator"class="form-control" />
+        <span asp-validation-for="Creator"class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+
+        <input type="submit" value="Create Event" class="btn btn-primary" />
+    </div>
+</form>
+</div>
+
+

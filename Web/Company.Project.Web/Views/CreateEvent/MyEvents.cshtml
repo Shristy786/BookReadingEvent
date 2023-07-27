@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+@model IEnumerable<CreateEventModel>
+
+<div class="container">
+    <h3 class="display-4 text-center">My Events</h3>
+    <hr />
+    @foreach (var e in Model)
+    {
+        <div class="card shadow-sm col-md-9  justify-content-center">
+            <img class="bd-placeholder-img card-img-top" height="525" src="~/images/book5.jpg" />
+
+            <div class="card-body text-center">
+                <h4 class="card-title"><b>Title:</b>@e.Title</h4>
+                <h5 class="card-subtitle mb-2 text-muted"><b>Discription :</b>@e.Discription </h5>
+                <h5 class="card-subtitle mb-2 text-muted"><b>Date :</b>@e.Date </h5>
+                <h5 class="card-subtitle mb-2 text-muted"><b>Duration :</b>@e.Duration</h5>
+                <h5 class="card-subtitle mb-2 text-muted"><b>Location :</b>@e.Location</h5>
+                <h5 class="card-subtitle mb-2 text-muted"><b>StartTime :</b>@e.StartTime</h5>
+                <h5 class="card-subtitle mb-2 text-muted"><b>OtherDetails :</b>@e.OtherDetails</h5>
+                <h5 class="card-subtitle mb-2 text-muted"><b>Oreated By :</b>@e.Creator</h5>
+
+            </div>
+        </div>
+    }
+
+</div>

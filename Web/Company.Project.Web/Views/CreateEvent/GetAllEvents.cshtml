@@ -1,0 +1,82 @@
+﻿@model IList<CreateEventModel>
+@{
+    ViewData["Title"] = "Events Details";
+}
+@*<h1>@ViewData["Title"]</h1>*@
+
+
+<div class="container">
+    <h4>All Events</h4>
+    <div class="row">
+        @foreach (var book in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" src="~/images/book3.jpg" width="500" height="225" />
+                    @*<svg class="bd-placeholder-img card-img-top-" width="100%" height="225" xmlns="https://www.shutterstock.com/image-vector/mockup-blank-cover-magazine-book-booklet-1390512062"></svg>*@
+                <div class="card-body">
+
+
+                    <h3 class="card-title">
+                        <label asp-for="@book.Title"></label>
+                        - @book.Title
+                    </h3>
+
+                    <p class="card-text">
+                        <label asp-for="@book.Discription"></label>
+                        - @book.Discription
+                    </p>
+
+                    <p class="card-text">
+                        <label asp-for="@book.Location"></label>
+                        -@book.Location
+                    </p>
+
+                    <p class="card-text">
+                        <label asp-for="@book.StartTime"></label>
+                        - @book.StartTime
+                    </p>
+
+                    <p class="card-text">
+                        <label asp-for="@book.Date"></label>
+                        - @book.Date
+                    </p>
+
+                    <p class="card-text">
+                        <label asp-for="@book.Duration"></label>
+                        - @book.Duration
+                    </p>
+
+                    <p class="card-text">
+                        <label asp-for="@book.EventType"></label>
+                        - @book.EventType
+                    </p>
+
+                    <p class="card-text">
+                        <label asp-for="@book.OtherDetails"></label>
+                        -@book.OtherDetails
+                    </p>
+
+                    <p class="card-text">
+                        <label asp-for="@book.InviteByMail"></label>
+                        -@book.InviteByMail
+                    </p>
+                    <p class="card-text">
+                        <label asp-for="@book.Creator"></label>
+                        -@book.Creator
+                    </p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a asp-controller="CreateEvent" asp-action="GetEvent" asp-route-id="  @book.EventId" asp-route-Name="eventDetailsRoute" class="btn btn-sm btn-outline-secondary">view Detail</a>
+                        </div>
+                        <small class="text-muted">@book.EventType</small>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
